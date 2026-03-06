@@ -3,6 +3,8 @@ from flask_security import Security # type: ignore
 from flask_restful import Api # type: ignore
 
 
+from flask_cors import CORS # type: ignore
+
 
 from controllers.database import db
 from controllers.config import Config as config
@@ -41,7 +43,7 @@ def create_app():
     
     
 app,api = create_app()
-
+CORS(app,origins=["http://localhost:5000","http://localhost:5173"])
 
 @app.route("/")
 def home():
@@ -70,4 +72,4 @@ api.add_resource(CategoryCRUDAPI,'/categories','/categories/<int:category_id>')
 
 
 if __name__ == "__main__":
-    app.run(debug = True) # pyright: ignore[reportAttributeAccessIssue]
+    app.run(debug = True, port = 5000) # pyright: ignore[reportAttributeAccessIssue]

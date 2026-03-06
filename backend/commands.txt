@@ -1,3 +1,10 @@
 python3 -m venv .env
 source .env/bin/activate
 pip3 intall -r requirements.txt
+npm create vue@latest
+
+https://router.vuejs.org/guide/essentials/dynamic-matching
+
+https://router.vuejs.org/guide/essentials/navigation
+
+https://router.vuejs.org/guide/essentials/passing-props
